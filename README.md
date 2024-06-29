@@ -1,7 +1,7 @@
 # EnderFlare
 
 **Author:** herbs.acab  
-**Version:** 1.6.0  
+**Version:** 1.7.0  
 
 ## Description
 
@@ -15,15 +15,17 @@ The EnderFlare plugin teleports the player to the location where a thrown flare 
 
 ## Features
 
+- Custom item (Ender Flare) that can be spawned with the `/givepearl` command.
+- Uses the skin: [Ender Flare Skin](https://steamcommunity.com/sharedfiles/filedetails/?id=3278321692).
 - Teleports the player to the location where a thrown flare lands.
-- Ensures the player does not take fall damage upon landing.
 - Sends a chat message to the player when they throw an Ender Flare.
 
 ## Usage
 
-1. Throw a flare in the game.
-2. After 1.5 seconds, you will be teleported to the location where the flare lands.
-3. A chat message will notify you that you have thrown an Ender Flare.
+1. Use the command `/givepearl` to receive an Ender Flare.
+2. Throw the Ender Flare in the game.
+3. After 1.5 seconds, you will be teleported to the location where the flare lands.
+4. A chat message will notify you that you have thrown an Ender Flare.
 
 ## Hooks
 
@@ -37,7 +39,9 @@ This plugin is inspired by the Ender Pearl mechanic from Minecraft, where throwi
 
 ## Changelog
 
-- **1.6.0**
+- **1.7.0**
+  - Added custom item with `/givepearl` command.
+  - Used specified skin for the custom item.
   - Added Init and Unload hooks for proper loading and unloading.
   - Ensured the player does not take fall damage upon landing.
   - Added chat messages for better user feedback.
