@@ -1,23 +1,32 @@
 using System;
 using UnityEngine;
 using Oxide.Core.Plugins;
+using System.Collections.Generic;
 
 namespace Oxide.Plugins
 {
-    [Info("EnderFlare", "herbs.acab", "1.6.0")]
+    [Info("EnderFlare", "herbs.acab", "1.7.0")]
     [Description("Teleports the player to where the thrown flare lands.")]
     public class EnderFlare : RustPlugin
     {
         private const string FlarePrefab = "assets/prefabs/tools/flare/flare.deployed.prefab";
+        private const ulong FlareSkinID = 3278321692;
+        private const string FlareItemShortName = "flare";
 
-        private void Init()
+        [ChatCommand("givepearl")]
+        private void GivePearlCommand(BasePlayer player, string command, string[] args)
         {
-            Puts("EnderFlare plugin loaded.");
+            GiveEnderPearl(player);
+            player.ChatMessage("You have received an Ender Flare!");
         }
 
-        private void Unload()
+        private void GiveEnderPearl(BasePlayer player)
         {
-            Puts("EnderFlare plugin unloaded.");
+            Item item = ItemManager.CreateByName(FlareItemShortName, 1, FlareSkinID);
+            if (item != null)
+            {
+                player.GiveItem(item);
+            }
         }
 
         private void OnExplosiveThrown(BasePlayer player, BaseEntity entity)
@@ -46,6 +55,16 @@ namespace Oxide.Plugins
                 return;
 
             player.Teleport(position);
+        }
+
+        private void Init()
+        {
+            Puts("EnderFlare plugin loaded.");
+        }
+
+        private void Unload()
+        {
+            Puts("EnderFlare plugin unloaded.");
         }
     }
 }
