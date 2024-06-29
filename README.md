@@ -1,11 +1,11 @@
 # EnderFlare
 
 **Author:** herbs.acab  
-**Version:** 1.7.0  
+**Version:** 1.9.6  
 
 ## Description
 
-The EnderFlare plugin teleports the player to the location where a thrown flare lands, similar to the Ender Pearl in Minecraft. This plugin adds a fun and strategic element to gameplay by allowing players to quickly traverse distances using flares.
+The EnderFlare plugin teleports the player to the location where a thrown custom flare lands, similar to the Ender Pearl in Minecraft. This plugin adds a fun and strategic element to gameplay by allowing players to quickly traverse distances using flares.
 
 ## Installation
 
@@ -15,15 +15,23 @@ The EnderFlare plugin teleports the player to the location where a thrown flare 
 
 ## Features
 
-- Custom item (Ender Flare) that can be spawned with the `/givepearl` command.
+- Custom item (Ender Flare) that can be crafted with the `/craftpearl` command.
 - Uses the skin: [Ender Flare Skin](https://steamcommunity.com/sharedfiles/filedetails/?id=3278321692).
-- Teleports the player to the location where a thrown flare lands.
+- Teleports the player to the location where a thrown custom flare lands.
 - Sends a chat message to the player when they throw an Ender Flare.
+- Admins can use the `/givepearl` command to give Ender Flares to players.
+
+## Crafting
+
+- Use the command `/craftpearl` to craft an Ender Flare.
+- Crafting recipe: 50 Metal Fragments, 5 Low Grade Fuel, 1 High Quality Metal.
+- You will receive 5 Ender Flares per craft.
+- If you do not have enough resources, the message will display: `To craft Ender Flares you must have [red]50x Metal Frags, 5x Low Grade & 1 HQM![/red]`.
 
 ## Usage
 
-1. Use the command `/givepearl` to receive an Ender Flare.
-2. Throw the Ender Flare in the game.
+1. Use the command `/craftpearl` to craft Ender Flares.
+2. Throw an Ender Flare in the game.
 3. After 1.5 seconds, you will be teleported to the location where the flare lands.
 4. A chat message will notify you that you have thrown an Ender Flare.
 
@@ -39,13 +47,16 @@ This plugin is inspired by the Ender Pearl mechanic from Minecraft, where throwi
 
 ## Changelog
 
-- **1.7.0**
-  - Added custom item with `/givepearl` command.
-  - Used specified skin for the custom item.
+- **1.9.6**
+  - Fixed teleportation issue for custom Ender Flare.
+  - Ensured regular flares do not trigger teleportation.
+  - Added custom identifier to distinguish custom flares from regular flares.
+  - Added crafting command `/craftpearl` with specified recipe.
+  - Restricted `/givepearl` command to admins only.
   - Added Init and Unload hooks for proper loading and unloading.
   - Ensured the player does not take fall damage upon landing.
   - Added chat messages for better user feedback.
-  - Teleportation occurs 1.5 seconds after throwing the flare.
+  - Teleportation occurs 1.5 seconds after throwing the custom flare.
 
 ## Credits
 
